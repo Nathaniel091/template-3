@@ -1,7 +1,7 @@
-html {
+/*html {
   scroll-behavior: smooth;
 }
-
+*/
 * {
   box-sizing: border-box;
   margin: 0;
@@ -120,20 +120,18 @@ html {
 # General Styling
 --------------------------------------------------------------*/
 body {
-  /*font-family: 'Segoe UI', sans-serif;*/
   font-family: 'Open Sans', sans-serif;
 }
 
 /* .active */
 .my-active {
   background: var(--my-primary-color);
-  color: var(--my-base-color);
+  color: var(--my-base-color-dark) !important;
   border-radius: 4px;
   transition: 0.5s;
 }
 
 .my-active:hover {
-  color: white !important;
   background-color: var(--my-primary-color-opacity-90); 
   transition: 0.5s;
 }
@@ -258,7 +256,6 @@ body {
   height: 40px;
 }
 
-
 .menu-item:hover {
   color: var(--my-base-color-dark);
   background-color: var(--my-primary-color);
@@ -277,7 +274,7 @@ body {
     height: 100%; /* 100% Full-height */
     width: 0; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place - no movement */
-    z-index: 1; /* Stay on top */
+    z-index: 1000; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
     overflow-x: hidden; /* Disable horizontal scroll */
@@ -287,10 +284,13 @@ body {
 
   .menu-item {
     display: block;
-    padding: 8px 8px 20px 30px;
-    font-size: 1.4em;
+    /*padding: 8px 8px 20px 30px;*/
+    margin-left: 20px;
+    margin-bottom: 20px;
+    font-size: 1em;
     opacity: 0.8;
     transition: 0.3s;
+    color: white !important;
   }
 
   .menu-item:hover {
@@ -299,7 +299,7 @@ body {
 
   .my-active{
     background: transparent !important;
-    color: var(--my-primary-color);
+    color: var(--my-primary-color) !important;
   }
 
   .my-active:after {
@@ -373,6 +373,12 @@ body {
   background-color: rgba(5, 65, 0, 0.2);
   filter: brightness(2);
 }*/
+
+@media (max-width: 575px) {
+  .carousel-container {
+    height: 470px;
+  }
+}
 
 
 /*--------------------------------------------------------------

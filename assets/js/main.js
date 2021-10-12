@@ -57,6 +57,40 @@ menuToggle.addEventListener('click', () => {
 });
 
 
+// sticky nav-bar
+window.addEventListener('scroll', function() {
+	let navbar = document.querySelector('.nav-bar');
+	if (window.scrollY > 100) {
+		navbar.classList.add('fixed-top');
+	} else {
+		navbar.classList.remove('fixed-top');
+	}
+});
+
+
+// Add smooth scrolling to all links
+$(".menu-item, .back-to-top").on('click', function(event) {
+	// Make sure this.hash has a value before overriding default behavior
+	if (this.hash !== "") {
+		// Prevent default anchor click behavior
+		event.preventDefault();
+
+		// Store hash
+		let hash = this.hash;
+
+		// Using jQuery's animate() method to add smooth page scroll
+		// The optional number (500) specifies the number of milliseconds it takes to scroll to the specified area
+		$('html, body').animate({
+			scrollTop: $(hash).offset().top
+		}, 500, function(){
+			// Add hash (#) to URL when done scrolling (default click behavior)
+			window.location.hash = hash;
+			// console.log($(hash).offset().top);
+
+		});
+	} // End if
+});
+
 
 /*----------------------------------------------------------------------------------------------------
 # .active & .menu-items
@@ -65,11 +99,11 @@ let menuItems = document.querySelectorAll('.menu .menu-item')
 for(let i=0; i<menuItems.length; i++) {
 	menuItems[i].addEventListener('click', () => {
 		// select the current active element
-		let activeElement = document.querySelector('.active')
-		activeElement.classList.remove('active');
+		let activeElement = document.querySelector('.my-active')
+		activeElement.classList.remove('my-active');
 
 		// add .active to the clicked element
-		menuItems[i].classList.add('active');
+		menuItems[i].classList.add('my-active');
 	});
 }
 
